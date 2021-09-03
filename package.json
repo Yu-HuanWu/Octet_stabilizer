@@ -1,0 +1,37 @@
+{
+  "name": "Octet_Stabilizer",
+  "version": "1.0.0",
+  "description": "## Background A simple game that demonstrate how octet rule works in Chemistry. Bond to the atom that has the correct amount of valence electrons, be sure to avoid atoms that don't have the right number of electrons!",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yu-HuanWu/Octet_stabilizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yu-HuanWu/Octet_stabilizer/issues"
+  },
+  "homepage": "https://github.com/Yu-HuanWu/Octet_stabilizer#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.17.2",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.2.2",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  }
+}

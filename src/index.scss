@@ -1,0 +1,55 @@
+
+body {
+  background-color:#646E78;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 1em "Press start 2P";
+}
+
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+@mixin canvasborder( $width, $color, $bgcolor ) {
+  box-shadow:
+    $width 0 $bgcolor,
+    -$width 0 $bgcolor,
+    0 (-$width) $bgcolor,
+    0 $width $bgcolor,
+    2*$width 0 $color,
+    -2*$width 0 $color,
+    0 (-2*$width) $color,
+    0 2*$width $color, 
+    0 0 0 $width $color;
+  margin: 2*$width auto;
+}
+
+@mixin title( $width, $color, $bgcolor ) {
+  box-shadow:
+    $width 0 $bgcolor,
+    -$width 0 $bgcolor,
+    0 (-$width) $bgcolor,
+    0 $width $bgcolor,
+    2*$width 0 $color,
+    -2*$width 0 $color,
+    0 (-2*$width) $color,
+    0 2*$width $color, 
+    0 0 0 $width $color;
+  margin: 2*$width auto;
+}
+
+canvas {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: .4em 1.3em;
+  @include canvasborder( 4px, #EAB464, #8D98A7 );
+}
+
+h1 {
+  color: #DCCCBB;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: .8em 1.3em;
+  @include title( 4px,#A7754D, #FED9B7 );
+}

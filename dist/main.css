@@ -1,0 +1,33 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
+body {
+  background-color: #646E78;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 1em "Press start 2P";
+}
+
+canvas {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: 0.4em 1.3em;
+  box-shadow: 4px 0 #8D98A7, -4px 0 #8D98A7, 0 -4px #8D98A7, 0 4px #8D98A7, 8px 0 #EAB464, -8px 0 #EAB464, 0 -8px #EAB464, 0 8px #EAB464, 0 0 0 4px #EAB464;
+  margin: 8px auto;
+}
+
+h1 {
+  color: #DCCCBB;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: 0.8em 1.3em;
+  box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
+  margin: 8px auto;
+}
