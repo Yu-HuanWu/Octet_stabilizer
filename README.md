@@ -16,6 +16,7 @@ In addition, this project will include:
 - Handy Dandy README.md
 
 ## Wireframes
+![Octet stabilizer webframe](https://raw.githubusercontent.com/Yu-HuanWu/Octet_stabilizer/main/webframe.png)
 
 ## Technologies
 - Canvas
