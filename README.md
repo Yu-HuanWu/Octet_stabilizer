@@ -29,6 +29,3 @@ Day 3-4: Implement logics of collision detection, bonuncing physics, and ensure 
 Day 5: Implement BindKeyHandler for user controls and assign graphics to instances.
 Day 6: Deploy GitHub pages, double check to ensure correct references and links on GitHub pages.
 
-## Bonus
-- Add period 3 Elements.
-- Rotating electrons.
