@@ -24,9 +24,17 @@ In addition, this project will include:
 - npm
 
 ## Implementation Timeline
-Day 1: Research physics of particles on canvas, setup project.
-Day 2: Getting webpack up and running, set up canvas. Create UserAtom and Atom classes.
-Day 3-4: Implement logics of collision detection, bonuncing physics, and ensure correct render on the canvas.
-Day 5: Implement BindKeyHandler for user controls and assign graphics to instances.
-Day 6: Deploy GitHub pages, double check to ensure correct references and links on GitHub pages.
+### Day 1 Sept 2: 
+Research physics of particles on canvas, setup project.
+### Day 2 Sept 3: 
+Getting webpack up and running, set up canvas. Create UserAtom and Atom classes.
+### Day 3-4 Sept 4-5: 
+Implement logics of collision detection, bonuncing physics, and ensure correct render on the canvas.
+### Day 5 Sept 6: 
+Implement BindKeyHandler for user controls and assign graphics to instances.
+### Day 6 Sept 7: 
+Deploy GitHub pages, double check to ensure correct references and links on GitHub pages.
 
+## Bonus
+- Add period 3 Elements.
+- Rotating electrons.
