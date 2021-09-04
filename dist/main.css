@@ -2,6 +2,52 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/css_reset.css ***!
+  \********************************************************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
@@ -13,21 +59,25 @@ body {
   font: 1em "Press start 2P";
 }
 
-canvas {
-  margin: 0 auto;
-  display: inline-block;
-  text-align: center;
+canvas, #bg {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  display: block;
   padding: 0.4em 1.3em;
-  box-shadow: 4px 0 #8D98A7, -4px 0 #8D98A7, 0 -4px #8D98A7, 0 4px #8D98A7, 8px 0 #EAB464, -8px 0 #EAB464, 0 -8px #EAB464, 0 8px #EAB464, 0 0 0 4px #EAB464;
-  margin: 8px auto;
+  box-shadow: 4px 0 #8D98A7, -4px 0 #8D98A7, 0 -4px #8D98A7, 0 4px #8D98A7, 12px 0 #EAB464, -12px 0 #EAB464, 0 -12px #EAB464, 0 12px #EAB464, 0 0 0 4px #EAB464;
+  margin: 20px auto;
+}
+
+canvas {
+  margin-top: -433px;
 }
 
 h1 {
   color: #DCCCBB;
-  margin: 0 auto;
-  display: inline-block;
-  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
   padding: 0.8em 1.3em;
+  font-size: 1.5em;
   box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
   margin: 8px auto;
 }

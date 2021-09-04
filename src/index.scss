@@ -1,6 +1,7 @@
+@import url(./styles/css_reset.css);
 
 body {
-  background-color:#646E78;
+  background-color: #646E78;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,12 +16,12 @@ body {
     -$width 0 $bgcolor,
     0 (-$width) $bgcolor,
     0 $width $bgcolor,
-    2*$width 0 $color,
-    -2*$width 0 $color,
-    0 (-2*$width) $color,
-    0 2*$width $color, 
+    3*$width 0 $color,
+    -3*$width 0 $color,
+    0 (-3*$width) $color,
+    0 3*$width $color, 
     0 0 0 $width $color;
-  margin: 2*$width auto;
+    margin: 5*$width auto;
 }
 
 @mixin title( $width, $color, $bgcolor ) {
@@ -37,19 +38,23 @@ body {
   margin: 2*$width auto;
 }
 
+canvas, #bg {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: block;
+    padding: .4em 1.3em;
+    @include canvasborder( 4px, #EAB464, #8D98A7 );
+}
 canvas {
-  margin: 0 auto;
-  display: inline-block;
-  text-align: center;
-  padding: .4em 1.3em;
-  @include canvasborder( 4px, #EAB464, #8D98A7 );
+    margin-top: -433px;
+    // @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
 
 h1 {
   color: #DCCCBB;
-  margin: 0 auto;
-  display: inline-block;
-  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
   padding: .8em 1.3em;
+  font-size: 1.5em;
   @include title( 4px,#A7754D, #FED9B7 );
 }
