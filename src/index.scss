@@ -1,11 +1,15 @@
 @import url(./styles/css_reset.css);
 
+
 body {
   background-color: #646E78;
+  background-image: linear-gradient(to bottom right, #646E78, rgb(22, 41, 60));
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   font: 1em "Press start 2P";
+  
 }
 
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
@@ -43,7 +47,7 @@ canvas, #bg {
     height: 400px;
     position: relative;
     display: block;
-    padding: .4em 1.3em;
+    padding: .4em .4em;
     @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
 canvas {

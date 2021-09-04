@@ -53,6 +53,8 @@ table {
   \*****************************************************************************************************************************************/
 body {
   background-color: #646E78;
+  background-image: linear-gradient(to bottom right, #646E78, #16293c);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +66,7 @@ canvas, #bg {
   height: 400px;
   position: relative;
   display: block;
-  padding: 0.4em 1.3em;
+  padding: 0.4em 0.4em;
   box-shadow: 4px 0 #8D98A7, -4px 0 #8D98A7, 0 -4px #8D98A7, 0 4px #8D98A7, 12px 0 #EAB464, -12px 0 #EAB464, 0 -12px #EAB464, 0 12px #EAB464, 0 0 0 4px #EAB464;
   margin: 20px auto;
 }
