@@ -47,13 +47,15 @@ class Atom {
         };
     }
 
-    update() {
+    wallBounce() {
         if ((this.pos[0] + this.radius*2) >= Game.DIM_X){
             this.vel[0]= -(this.vel[0])
+            this.pos[0]= 350;
         };
 
         if ((this.pos[0] + this.radius*1.2) <= 0){
             this.vel[0]= -(this.vel[0])
+            this.pos[0]= 0;
         };
 
         if ((this.pos[1] + this.radius*2) >= Game.DIM_Y) {

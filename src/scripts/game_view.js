@@ -28,7 +28,9 @@ class GameView {
         const timeDelta = time - this.lastTime;
 
         // this.game.step(timeDelta);
-        this.player.move(timeDelta); //it must be not linking to the right addPlayer. investigate
+        this.player.move(timeDelta);
+        this.player.collisionAtoms();
+        this.player.wallBounce();
         this.game.draw(this.ctx);
         this.lastTime = time;
 

@@ -12,6 +12,7 @@ class Player {
         this.img = new Image();
         this.img.src = "src/assets/playertest.png";
         this.img.onload= () => this.draw();
+        this.radius = (this.width * 0.15) / 2
     }
 
     draw(ctx){
@@ -43,6 +44,42 @@ class Player {
 
     moveObject(timeDelta) {
         this.move(timeDelta);
+    }
+
+    wallBounce() {
+        if ((this.pos[0] + this.radius * 2) >= 400) {
+            this.vel[0] = -1
+        };
+
+        if ((this.pos[0] + this.radius * 1.2) <= 0) {
+            this.vel[0] = 1
+        };
+
+        if ((this.pos[1] + this.radius * 2) >= 400) {
+            this.vel[1] = -1
+        };
+
+        if ((this.pos[1] + this.radius * 1.2) <= 0) {
+            this.vel[1] = 1
+        };
+
+        this.pos[0] += this.vel[0];
+        this.pos[1] += this.vel[1];
+    }
+
+    collisionAtoms() {
+        for (let j = 0; j < this.game.atoms.length; j++) {
+            const dx = this.pos[0] - this.game.atoms[j].pos[0];
+            const dy = this.pos[1] - this.game.atoms[j].pos[1];
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.radius + this.game.atoms[j].radius) {
+                this.vel[0] = -(this.vel[0]);
+                this.game.atoms[j].vel[1] = -(this.vel[1]);
+                this.pos[0] += this.vel[0];
+                this.game.atoms[j].pos[0] += this.game.atoms[j].vel[0];
+            }
+        }
     }
 }
 

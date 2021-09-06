@@ -1,7 +1,7 @@
 
 import Atom from "./atom";
+// import Lithium from "./elements"
 import Player from "./player";
-// const Player = require("./player");
 const Util = require("./util");
 
 class Game {
@@ -13,12 +13,9 @@ class Game {
         //potential feature: instead of player being the atom, the player is a spaceship that hold the atom in front.
     }
     addAtom() {
-        // while (this.atoms.length < Game.NUM_ATOMS) {
-        //     let newAtom = new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-5, 5), Util.random(-5, 5)] , game: this });
-        //     this.atoms.push(newAtom);
-        // }
         for (let i = 0; i < Game.NUM_ATOMS; i++) {
-            this.atoms.push(new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-5, 5), Util.random(-5, 5)], game: this }));
+            // this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this }) )
+            this.atoms.push(new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this }));
         }
     };
 
@@ -35,56 +32,37 @@ class Game {
         return [].concat(this.players, this.atoms);
     }
 
-    // collisionDetect() {
-    //     for(let i= 0; i < this.atoms.length; i++){
-    //         for (let j = 0; j < this.atoms.length; j++) {
-    //             if (!(this.atoms[i] === this.atoms[j])) {
-    //                 const dx = this.atoms[i].pos[0] - this.atoms[j].pos[0];
-    //                 const dy = this.atoms[i].pos[1] - this.atoms[j].pos[1];
-    //                 const distance = Math.sqrt(dx * dx + dy * dy);
-
-    //                 if (distance < this.radius + this.atoms[j].radius) {
-    //                     this.atoms[i].vel[0] = -(this.atoms[i].vel[0]);
-    //                     this.atoms[j].vel[1] = -(this.atoms[j].vel[1]);
-    //                     this.atoms[i].pos[0] += this.atoms[i].vel[0];
-    //                     this.atoms[j].pos[0] += this.atoms[j].vel[0];
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
     draw(ctx) {
         ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
         ctx.fillStyle = "rgba(0, 0, 0, 1)";
         ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
 
-        // for (let i = 0; i < this.atoms.length; i++) {
-        //     this.atoms[i].draw(ctx);
-        //     this.atoms[i].update();
-        //     // this.atoms[i].collisionDetect();
-        // }
         this.allObjects().forEach(function (object) {
             object.draw(ctx);
         });
-        this.atoms.forEach(el=>{
-            el.update();
+
+        this.atoms.forEach(el=> {
+            el.wallBounce();
             el.collisionDetect();
         })
-
-       // this.players[0].draw(ctx);
     }
 
-    step(delta) {
-        this.players[0].move(delta);
-        // this.collisionDetect();
-    };
+    remove(object) {
+        if (object instanceof Atom) {
+            this.atoms.splice(this.atoms.indexOf(object), 1);
+        } else if (object instanceof Player) {
+            this.ships.splice(this.ships.indexOf(object), 1);
+        } else {
+            throw new Error("unknown type of object");
+        }
+    }
+
 }
 
 Game.DIM_X = 400;
 Game.DIM_Y = 400;
 Game.FPS = 32;
-Game.NUM_ATOMS = 4;
+Game.NUM_ATOMS = 9;
 Game.NUM_PLAYERS= 7;
 
 
