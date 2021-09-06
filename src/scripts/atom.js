@@ -84,7 +84,6 @@ class Atom {
             }
         }
     }
-
 }
 
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {

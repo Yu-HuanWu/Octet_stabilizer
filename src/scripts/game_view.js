@@ -12,6 +12,7 @@ class GameView {
             key(k, function () { player.power(moves); });
         });
 
+        // key("w", function () { player.power([0, 1]); });
         key("space", function () { player.switchAtom(); });
         //will need to create player.prototype.switchAtom
     }
@@ -26,7 +27,8 @@ class GameView {
     animate(time) {
         const timeDelta = time - this.lastTime;
 
-        this.game.step(timeDelta);
+        // this.game.step(timeDelta);
+        this.player.move(timeDelta); //it must be not linking to the right addPlayer. investigate
         this.game.draw(this.ctx);
         this.lastTime = time;
 
@@ -36,9 +38,9 @@ class GameView {
 }
 
 GameView.MOVES = {
-    w: [0, 1],
+    w: [0, -1],
     a: [-1, 0],
-    s: [0, -1],
+    s: [0, 1],
     d: [1, 0],
 };
 

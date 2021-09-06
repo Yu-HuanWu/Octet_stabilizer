@@ -72,11 +72,11 @@ class Game {
             el.collisionDetect();
         })
 
-        // this.players[0].draw(ctx);
+       // this.players[0].draw(ctx);
     }
 
     step(delta) {
-        this.addPlayer().move(delta);
+        this.players[0].move(delta);
         // this.collisionDetect();
     };
 }
