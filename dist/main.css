@@ -83,3 +83,7 @@ h1 {
   box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
   margin: 8px auto;
 }
+
+#testing {
+  display: none;
+}

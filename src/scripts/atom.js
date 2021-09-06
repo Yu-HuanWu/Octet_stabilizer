@@ -26,28 +26,15 @@ class Atom {
         if (Math.abs(this.pos[0] - this.prevPos[0]) > 13 || Math.abs(this.pos[1] - this.prevPos[1]) > 13) {
             this.prevPos = this.pos;
         }
+        // console.log("hi")
 
-        if (Math.round(Math.abs(this.pos[0] - this.prevPos[0])) > 11 && Math.round(Math.abs(this.pos[0] - this.prevPos[0])) < 12 || Math.round(Math.abs(this.pos[1] - this.prevPos[1])) > 11 && Math.round(Math.abs(this.pos[1] - this.prevPos[1])) < 12) {
-
+        if (Math.abs(this.pos[0] - this.prevPos[0]) > 0 && (this.pos[0] - this.prevPos[0])< 12) {
+            console.log("test")
             this.prevPos = this.pos;
             this.counter += 1;
-            if (this.vel[0] < 0 || this.vel[1]<0) {
-                if (this.pos[1] < 400) {
-                    this.frameX = this.frames[this.counter % 2][0];
-                    this.frameY = this.frames[this.counter % 2][1];
-                } else {
-                    this.frameX = this.frames[this.counter % 2][0];
-                    this.frameY = this.frames[this.counter % 2][1];
-                }
-            } else {
-                if (this.pos[1] < 400) {
-                    this.frameX = this.frames[this.counter % 2][0];
-                    this.frameY = this.frames[this.counter % 2][1];
-                } else {
-                    this.frameX = this.frames[this.counter % 2][0];
-                    this.frameY = this.frames[this.counter % 2][1];
-                }
-            }
+            this.frameX = this.frames[this.counter % 6][0];
+            this.frameY = this.frames[this.counter % 2][1];
+            this.counter = 0
         }
 
         drawSprite(this.img, this.width * this.frameX, this.height * this.frameY, this.width, this.height,
@@ -88,15 +75,16 @@ class Atom {
                 const dy = this.pos[1] - this.game.atoms[j].pos[1];
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                // if (distance < this.radius + this.game.atoms[j].radius) {
-                //     this.vel[0] = -(this.vel[0]);
-                //     this.game.atoms[j].vel[1] = -(this.vel[1]);
-                //     this.pos[0] += this.vel[0];
-                //     this.game.atoms[j].pos[0] += this.game.atoms[j].vel[0];
-                // }
+                if (distance < this.radius + this.game.atoms[j].radius) {
+                    this.vel[0] = -(this.vel[0]);
+                    this.game.atoms[j].vel[1] = -(this.vel[1]);
+                    this.pos[0] += this.vel[0];
+                    this.game.atoms[j].pos[0] += this.game.atoms[j].vel[0];
+                }
             }
         }
     }
+
 }
 
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {

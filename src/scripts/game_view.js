@@ -2,14 +2,14 @@ class GameView {
     constructor(game, ctx) {
         this.ctx = ctx;
         this.game = game;
-        // this.player = this.game.addPlayer();
+        this.player = this.game.addPlayer();
     }
     bindKeyHandlers() {
         const player = this.player;
 
         Object.keys(GameView.MOVES).forEach(function (k) {
-            const move = GameView.MOVES[k];
-            key(k, function () { player.power(move); });
+            const moves = GameView.MOVES[k];
+            key(k, function () { player.power(moves); });
         });
 
         key("space", function () { player.switchAtom(); });
@@ -26,7 +26,7 @@ class GameView {
     animate(time) {
         const timeDelta = time - this.lastTime;
 
-        // this.game.step(timeDelta);
+        this.game.step(timeDelta);
         this.game.draw(this.ctx);
         this.lastTime = time;
 
@@ -36,9 +36,9 @@ class GameView {
 }
 
 GameView.MOVES = {
-    w: [0, -1],
+    w: [0, 1],
     a: [-1, 0],
-    s: [0, 1],
+    s: [0, -1],
     d: [1, 0],
 };
 
