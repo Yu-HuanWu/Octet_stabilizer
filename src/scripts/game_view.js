@@ -2,6 +2,7 @@ class GameView {
     constructor(game, ctx) {
         this.ctx = ctx;
         this.game = game;
+        this.switch= 0;
         this.player = this.game.addPlayer();
     }
     bindKeyHandlers() {
@@ -12,9 +13,7 @@ class GameView {
             key(k, function () { player.power(moves); });
         });
 
-        // key("w", function () { player.power([0, 1]); });
-        key("space", function () { player.switchAtom(); });
-        //will need to create player.prototype.switchAtom
+        key("space", function () { player.switchAtom(); this.switch +=1});
     }
 
     start() {
@@ -27,7 +26,6 @@ class GameView {
     animate(time) {
         const timeDelta = time - this.lastTime;
 
-        // this.game.step(timeDelta);
         this.player.move(timeDelta);
         this.player.collisionAtoms();
         this.player.wallBounce();

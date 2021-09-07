@@ -1,5 +1,8 @@
 const canvas = document.getElementById('octet-game');
 const ctx = canvas.getContext('2d');
+import {Lithium, Beryllium, Boron} from "./elements";
+
+
 class Player {
     constructor(options){
         this.width=320;
@@ -10,21 +13,49 @@ class Player {
         this.frameY= 0;
         this.pos = options.pos;
         this.img = new Image();
+        this.elements = ["Oxygen", "Fluorine", "Nitrogen"];
+        this.num = 0
+        this.element= this.elements[this.num];
+        // this.img.src= options.src;
         this.img.src = "src/assets/playertest.png";
-        this.img.onload= () => this.draw();
-        this.radius = (this.width * 0.15) / 2
+        // this.img.onload= () => this.draw();
+        this.radius = (this.width * 0.15) / 2;
+        this.counter = 3
     }
 
     draw(ctx){
         drawSprite(this.img, this.width * this.frameX, this.height * this.frameY, this.width, this.height,
             this.pos[0], this.pos[1], this.width * 0.2, this.height * 0.2);
-        if (this.frameX < 20) {
-            this.frameX++;
-            // this.frameX += 1;
-        } else {
-            this.frameX = 0;
-        };
 
+        //this is to slowdown the frame rate
+        if (this.counter > 0) {
+            this.counter -= 1;
+        } else {
+            // This is where Player's atom will change upon hitting space bar
+            if (this.element === "Oxygen") {
+                this.img.src = "src/assets/playertest.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            } else if (this.element === "Fluorine") {
+                this.img.src = "src/assets/ezgif.com-gif-maker.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            } else if (this.element === "Nitrogen") {
+                this.img.src = "src/assets/playertest.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            }
+            this.counter = 3;
+        }
     }
 
 
@@ -32,6 +63,23 @@ class Player {
         //impulse will be based on user's move keys
         this.vel[0] += impulse[0];
         this.vel[1] += impulse[1];
+    };
+
+    switchAtom(){
+    //     if (this.game.test=== 0) {
+    //     this.game.test= 1;
+    //     this.element= this.elements[1];
+    // } else {
+    //     this.game.test= 0;
+    //     this.element= this.elements[0];
+    // }
+        if (this.num < 2){
+            this.num+= 1;
+            this.element = this.elements[this.num];
+        } else {
+            this.num= 0
+            this.element = this.elements[this.num];
+        }
     };
 
     move(timeDelta) {
@@ -74,6 +122,16 @@ class Player {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < this.radius + this.game.atoms[j].radius) {
+                if (this.game.atoms[j] instanceof Lithium && this.element === "Fluorine") {
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Beryllium && this.element === "Oxygen"){
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Boron && this.element === "Nitrogen") {
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                }
                 this.vel[0] = -(this.vel[0]);
                 this.game.atoms[j].vel[1] = -(this.vel[1]);
                 this.pos[0] += this.vel[0];
