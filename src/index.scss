@@ -63,6 +63,17 @@ h1 {
   @include title( 4px,#A7754D, #FED9B7 );
 }
 
-#testing {
-  display: none;
+.compound{
+  @include title( 4px,#A7754D, #FED9B7 );
+}
+
+.compound-none{
+  background-color: black;
+  margin: 3px;
+  // @include title( 4px,#A7754D, #FED9B7 );
+}
+
+.LiActive{
+  background-color: white;
+
 }

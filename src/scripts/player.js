@@ -1,6 +1,6 @@
 const canvas = document.getElementById('octet-game');
 const ctx = canvas.getContext('2d');
-import {Lithium, Beryllium, Boron} from "./elements";
+import { Lithium, Beryllium, Boron, Carbon, Nitrogen, Oxygen, Fluorine} from "./elements";
 
 
 class Player {
@@ -13,7 +13,7 @@ class Player {
         this.frameY= 0;
         this.pos = options.pos;
         this.img = new Image();
-        this.elements = ["Oxygen", "Fluorine", "Nitrogen"];
+        this.elements = ["Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine"];
         this.num = 0
         this.element= this.elements[this.num];
         // this.img.src= options.src;
@@ -53,6 +53,34 @@ class Player {
                 } else {
                     this.frameX = 0;
                 };
+            } else if (this.element === "Carbon") {
+                this.img.src = "src/assets/ezgif.com-gif-maker.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            } else if (this.element === "Boron") {
+                this.img.src = "src/assets/playertest.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            } else if (this.element === "Beryllium") {
+                this.img.src = "src/assets/ezgif.com-gif-maker.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
+            } else if (this.element === "Lithium") {
+                this.img.src = "src/assets/playertest.png";
+                if (this.frameX < 20) {
+                    this.frameX++;
+                } else {
+                    this.frameX = 0;
+                };
             }
             this.counter = 3;
         }
@@ -66,14 +94,7 @@ class Player {
     };
 
     switchAtom(){
-    //     if (this.game.test=== 0) {
-    //     this.game.test= 1;
-    //     this.element= this.elements[1];
-    // } else {
-    //     this.game.test= 0;
-    //     this.element= this.elements[0];
-    // }
-        if (this.num < 2){
+        if (this.num < 6){
             this.num+= 1;
             this.element = this.elements[this.num];
         } else {
@@ -130,6 +151,19 @@ class Player {
                     break;
                 } else if (this.game.atoms[j] instanceof Boron && this.element === "Nitrogen") {
                     this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Carbon && this.element === "Carbon") {
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Boron") {
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Beryllium") {
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Lithium") {
+                    this.game.remove(this.game.atoms[j]);
+                    this.game.updateCompound();
                     break;
                 }
                 this.vel[0] = -(this.vel[0]);

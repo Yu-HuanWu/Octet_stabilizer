@@ -1,8 +1,9 @@
 
 import Atom from "./atom";
-import {Lithium, Beryllium, Boron} from "./elements"
+import { Lithium, Beryllium, Boron, Carbon, Nitrogen, Oxygen, Fluorine} from "./elements"
 import Player from "./player";
 const Util = require("./util");
+const compound = document.getElementById("compound");
 
 class Game {
     constructor() {
@@ -16,6 +17,10 @@ class Game {
         this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png"}) )
         this.atoms.push(new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
         this.atoms.push(new Boron({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Carbon({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Nitrogen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Oxygen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Fluorine({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
         // for (let i = 0; i < Game.NUM_ATOMS; i++) {
         //     this.atoms.push(new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this }));
         // }
@@ -52,6 +57,15 @@ class Game {
 
     remove(object) {
         this.atoms.splice(this.atoms.indexOf(object), 1);
+    }
+
+    updateCompound(){
+        const boxes = Array.from(compound.children);
+
+        boxes.forEach( ele =>{
+            // ele.className= "LiActive";
+            ele.style.display= "none";
+        });
     }
 
 }

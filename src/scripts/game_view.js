@@ -31,6 +31,7 @@ class GameView {
         this.player.wallBounce();
         this.game.draw(this.ctx);
         this.lastTime = time;
+        // this.game.updateCompound();
 
         // every call to animate requests causes another call to animate
         requestAnimationFrame(this.animate.bind(this));
