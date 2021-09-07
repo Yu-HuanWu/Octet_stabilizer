@@ -4,6 +4,12 @@ import { Lithium, Beryllium, Boron, Carbon, Nitrogen, Oxygen, Fluorine} from "./
 import Player from "./player";
 const Util = require("./util");
 const compound = document.getElementById("compound");
+const boxes = Array.from(compound.children);
+boxes.forEach(ele => {
+    if (ele.className !== "blank"){
+        ele.style.display= "none";
+    }
+});
 
 class Game {
     constructor() {
@@ -59,12 +65,20 @@ class Game {
         this.atoms.splice(this.atoms.indexOf(object), 1);
     }
 
-    updateCompound(){
-        const boxes = Array.from(compound.children);
+    updateCompound(obj){
+        // const boxes = Array.from(compound.children);
+        // compound.style.display= "inline";
 
         boxes.forEach( ele =>{
-            // ele.className= "LiActive";
-            ele.style.display= "none";
+            if (obj instanceof Fluorine){
+                console.log('test');
+                if (ele.className === "LiActive"){
+                    ele.style.display= "inline";
+                }
+            }
+            if (ele.className === "blank") {
+                ele.style.display = "none";
+            }
         });
     }
 

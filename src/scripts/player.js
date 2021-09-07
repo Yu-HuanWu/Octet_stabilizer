@@ -162,8 +162,8 @@ class Player {
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Lithium") {
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
-                    this.game.updateCompound();
                     break;
                 }
                 this.vel[0] = -(this.vel[0]);

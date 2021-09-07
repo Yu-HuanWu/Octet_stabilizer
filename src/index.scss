@@ -65,15 +65,29 @@ h1 {
 
 .compound{
   @include title( 4px,#A7754D, #FED9B7 );
+  background-color: white;
+  min-width: 400px;
+  min-height: 30px;
+  max-width: 400px;
+  max-height: 30px;
 }
 
-.compound-none{
+.compound> .LiActive {
+  margin: 0 auto;
+  background-color: white;
+  width: 400px;
+  height: 30px;
+  text-align: center;
+}
+
+.BeActive {
   background-color: black;
-  margin: 3px;
+  // padding: 7px;
+}
+
+.compound> .blank{
+  background-color: black;
+
   // @include title( 4px,#A7754D, #FED9B7 );
 }
 
-.LiActive{
-  background-color: white;
-
-}
