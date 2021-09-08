@@ -15,7 +15,8 @@ class Atom {
         this.game= options.game;
         this.counter= 3;
         this.img= new Image();
-        this.img.src = "src/assets/ezgif.com-gif-maker.png"
+        this.img.src= options.src;
+        // this.img.src = "src/assets/ezgif.com-gif-maker.png"
         this.img.onload = () => this.draw()
         this.radius = (this.width * 0.15) /2
     }
@@ -26,7 +27,7 @@ class Atom {
         if (this.counter > 0){
             this.counter -=1;
         } else {
-            if (this.frameX < 20 ) {
+            if (this.frameX < 70 ) {
                 this.frameX++;
             } else {
                 this.frameX= 0;

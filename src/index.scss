@@ -65,29 +65,55 @@ h1 {
 
 .compound{
   @include title( 4px,#A7754D, #FED9B7 );
-  background-color: white;
+  background-color: rgb(39, 55, 75);
   min-width: 400px;
-  min-height: 30px;
+  min-height: 40px;
   max-width: 400px;
-  max-height: 30px;
-}
-
-.compound> .LiActive {
-  margin: 0 auto;
-  background-color: white;
-  width: 400px;
-  height: 30px;
+  max-height: 50px;
   text-align: center;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.BeActive {
-  background-color: black;
-  // padding: 7px;
+.LiFActive {
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
 }
 
-.compound> .blank{
-  background-color: black;
+.BeOActive {
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
+}
+
+.BNActive{
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
+}
+
+.FFActive{
+  color: rgb(177, 250, 189);
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
+}
+
+.OOActive{
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
+}
+
+.NNActive{
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
+}
+
+.blank{
+  color: white;
+  text-shadow: 2px 2px 4px rgb(168, 143, 97);
 
   // @include title( 4px,#A7754D, #FED9B7 );
 }
 
+sub {
+  font-size: 0.6em;
+}

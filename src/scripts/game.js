@@ -20,12 +20,12 @@ class Game {
         //potential feature: instead of player being the atom, the player is a spaceship that hold the atom in front.
     }
     addAtom() {
-        this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png"}) )
-        this.atoms.push(new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/LiAtom.png"}) )
+        this.atoms.push(new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
         this.atoms.push(new Boron({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
-        this.atoms.push(new Carbon({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        // this.atoms.push(new Carbon({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
         this.atoms.push(new Nitrogen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
-        this.atoms.push(new Oxygen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
+        this.atoms.push(new Oxygen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
         this.atoms.push(new Fluorine({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
         // for (let i = 0; i < Game.NUM_ATOMS; i++) {
         //     this.atoms.push(new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this }));
@@ -70,14 +70,31 @@ class Game {
         // compound.style.display= "inline";
 
         boxes.forEach( ele =>{
-            if (obj instanceof Fluorine){
-                console.log('test');
-                if (ele.className === "LiActive"){
+            ele.style.display = "none";
+            if (obj instanceof Fluorine || obj instanceof Lithium){
+                if (ele.className === "LiFActive"){
                     ele.style.display= "inline";
                 }
-            }
-            if (ele.className === "blank") {
-                ele.style.display = "none";
+            } else if (obj instanceof Oxygen || obj instanceof Beryllium) {
+                if (ele.className === "BeOActive") {
+                    ele.style.display = "inline";
+                }
+            } else if (obj instanceof Nitrogen || obj instanceof Boron) {
+                if (ele.className === "BNActive") {
+                    ele.style.display = "inline";
+                }
+            } else if (obj === "FF") {
+                if (ele.className === "FFActive") {
+                    ele.style.display = "inline";
+                }
+            } else if (obj === "OO") {
+                if (ele.className === "OOActive") {
+                    ele.style.display = "inline";
+                }
+            } else if (obj === "NN") {
+                if (ele.className === "NNActive") {
+                    ele.style.display = "inline";
+                }
             }
         });
     }

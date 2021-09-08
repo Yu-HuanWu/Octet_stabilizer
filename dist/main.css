@@ -87,25 +87,53 @@ h1 {
 .compound {
   box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
   margin: 8px auto;
-  background-color: white;
+  background-color: #27374b;
   min-width: 400px;
-  min-height: 30px;
+  min-height: 40px;
   max-width: 400px;
-  max-height: 30px;
-}
-
-.compound > .LiActive {
-  margin: 0 auto;
-  background-color: white;
-  width: 400px;
-  height: 30px;
+  max-height: 50px;
   text-align: center;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.BeActive {
-  background-color: black;
+.LiFActive {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
 }
 
-.compound > .blank {
-  background-color: black;
+.BeOActive {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+.BNActive {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+.FFActive {
+  color: #b1fabd;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+.OOActive {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+.NNActive {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+.blank {
+  color: white;
+  text-shadow: 2px 2px 4px #a88f61;
+}
+
+sub {
+  font-size: 0.6em;
 }

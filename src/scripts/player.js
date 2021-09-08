@@ -18,7 +18,6 @@ class Player {
         this.element= this.elements[this.num];
         // this.img.src= options.src;
         this.img.src = "src/assets/playertest.png";
-        // this.img.onload= () => this.draw();
         this.radius = (this.width * 0.15) / 2;
         this.counter = 3
     }
@@ -75,8 +74,8 @@ class Player {
                     this.frameX = 0;
                 };
             } else if (this.element === "Lithium") {
-                this.img.src = "src/assets/playertest.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/LiAtomPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
@@ -144,25 +143,39 @@ class Player {
 
             if (distance < this.radius + this.game.atoms[j].radius) {
                 if (this.game.atoms[j] instanceof Lithium && this.element === "Fluorine") {
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Beryllium && this.element === "Oxygen"){
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Boron && this.element === "Nitrogen") {
-                    this.game.remove(this.game.atoms[j]);
-                    break;
-                } else if (this.game.atoms[j] instanceof Carbon && this.element === "Carbon") {
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Boron") {
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Beryllium") {
+                    this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
                     break;
                 } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Lithium") {
                     this.game.updateCompound(this.game.atoms[j]);
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Fluorine") {
+                    this.game.updateCompound("FF");
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Oxygen") {
+                    this.game.updateCompound("OO");
+                    this.game.remove(this.game.atoms[j]);
+                    break;
+                } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Nitrogen") {
+                    this.game.updateCompound("NN");
                     this.game.remove(this.game.atoms[j]);
                     break;
                 }
