@@ -20,12 +20,12 @@ class Game {
         //potential feature: instead of player being the atom, the player is a spaceship that hold the atom in front.
     }
     addAtom() {
-        this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/LiAtom.png"}) )
-        this.atoms.push(new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
-        this.atoms.push(new Boron({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
-        // this.atoms.push(new Carbon({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
-        this.atoms.push(new Nitrogen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
-        this.atoms.push(new Oxygen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/ezgif.com-gif-maker.png" }))
+        this.atoms.push(new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomLi.png"}) )
+        this.atoms.push(new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomBe.png" }))
+        this.atoms.push(new Boron({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomB.png" }))
+        this.atoms.push(new Carbon({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomC.png" }))
+        this.atoms.push(new Nitrogen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomN.png" }))
+        this.atoms.push(new Oxygen({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/AtomO.png" }))
         this.atoms.push(new Fluorine({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [0, 0], game: this, src: "src/assets/playertest.png" }))
         // for (let i = 0; i < Game.NUM_ATOMS; i++) {
         //     this.atoms.push(new Atom({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this }));

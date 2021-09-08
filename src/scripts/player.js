@@ -32,8 +32,8 @@ class Player {
         } else {
             // This is where Player's atom will change upon hitting space bar
             if (this.element === "Oxygen") {
-                this.img.src = "src/assets/playertest.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomOPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
@@ -46,35 +46,35 @@ class Player {
                     this.frameX = 0;
                 };
             } else if (this.element === "Nitrogen") {
-                this.img.src = "src/assets/playertest.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomNPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
                 };
             } else if (this.element === "Carbon") {
-                this.img.src = "src/assets/ezgif.com-gif-maker.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomCPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
                 };
             } else if (this.element === "Boron") {
-                this.img.src = "src/assets/playertest.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomBPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
                 };
             } else if (this.element === "Beryllium") {
-                this.img.src = "src/assets/ezgif.com-gif-maker.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomBePlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
                 };
             } else if (this.element === "Lithium") {
-                this.img.src = "src/assets/LiAtomPlayer.png";
+                this.img.src = "src/assets/AtomLiPlayer.png";
                 if (this.frameX < 70) {
                     this.frameX++;
                 } else {
