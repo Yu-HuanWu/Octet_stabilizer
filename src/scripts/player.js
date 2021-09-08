@@ -17,13 +17,33 @@ class Player {
         this.num = 0
         this.element= this.elements[this.num];
         this.radius = (this.width * 0.15) / 2;
-        this.counter = 3
+        this.counter = 3;
+        this.shipcounter = 4;
+        this.shipframeX = 0;
+        this.shipframeY = 0;
     }
 
     draw(ctx){
-        drawSprite(this.img, this.width * this.frameX, this.height * this.frameY, this.width, this.height,
-            this.pos[0], this.pos[1], this.width * 0.2, this.height * 0.2);
+        let ship = new Image();
+        ship.src = "src/assets/Ship.png";
+        //img, sX, sY, sW, sH, dX, dY, dW, dH
+        
+        drawSprite(ship, 400 * this.shipframeX, 400 * this.shipframeY, 400, 400, this.pos[0] - 15, this.pos[1] - 15, this.width * 0.3, this.height * 0.3);
+        
+        if (this.shipcounter > 0) {
+            this.shipcounter -= 1;
+        } else {
+            if (this.shipframeX < 13) {
+                this.shipframeX++;
+            } else {
+                this.shipframeX = 0;
+            };
+            this.shipcounter = 4;
+        }
 
+        
+        drawSprite(this.img, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.pos[0], this.pos[1], this.width * 0.2, this.height * 0.2);
+        
         //this is to slowdown the frame rate
         if (this.counter > 0) {
             this.counter -= 1;
