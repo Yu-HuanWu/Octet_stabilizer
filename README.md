@@ -36,5 +36,5 @@ Implement BindKeyHandler for user controls and assign graphics to instances.
 Deploy GitHub pages, double check to ensure correct references and links on GitHub pages.
 
 ## Bonus
-- Add period 3 Elements.
+- Vary atoms' sizes based on their actual relative sizes.
 - Rotating electrons.
