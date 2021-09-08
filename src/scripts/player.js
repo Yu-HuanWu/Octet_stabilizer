@@ -16,8 +16,6 @@ class Player {
         this.elements = ["Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine"];
         this.num = 0
         this.element= this.elements[this.num];
-        // this.img.src= options.src;
-        this.img.src = "src/assets/playertest.png";
         this.radius = (this.width * 0.15) / 2;
         this.counter = 3
     }
@@ -39,8 +37,8 @@ class Player {
                     this.frameX = 0;
                 };
             } else if (this.element === "Fluorine") {
-                this.img.src = "src/assets/ezgif.com-gif-maker.png";
-                if (this.frameX < 20) {
+                this.img.src = "src/assets/AtomFPlayer.png";
+                if (this.frameX < 70) {
                     this.frameX++;
                 } else {
                     this.frameX = 0;
@@ -135,6 +133,7 @@ class Player {
         this.pos[1] += this.vel[1];
     }
 
+    // this is the logics for when player hit against another atom
     collisionAtoms() {
         for (let j = 0; j < this.game.atoms.length; j++) {
             const dx = this.pos[0] - this.game.atoms[j].pos[0];
