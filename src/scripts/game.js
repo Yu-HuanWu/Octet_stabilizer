@@ -161,6 +161,10 @@ class Game {
                 if (ele.className === "FFActive") {
                     ele.style.display = "inline";
                 }
+            } else if (obj === "CO") {
+                if (ele.className === "COActive") {
+                    ele.style.display = "inline";
+                }
             } else if (obj === "OO") {
                 if (ele.className === "OOActive") {
                     ele.style.display = "inline";

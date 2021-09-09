@@ -196,6 +196,11 @@ class Player {
                     this.game.remove(this.game.atoms[j]);
                     this.game.scoreOne();
                     break;
+                } else if ((this.game.atoms[j] instanceof Carbon && this.element === "Oxygen") || (this.game.atoms[j] instanceof Oxygen && this.element === "Carbon")) {
+                    this.game.updateCompound("CO");
+                    this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
+                    break;
                 } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Oxygen") {
                     this.game.updateCompound("OO");
                     this.game.remove(this.game.atoms[j]);

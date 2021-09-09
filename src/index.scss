@@ -120,6 +120,11 @@ h1:hover:after {
   text-shadow: 2px 2px 4px rgb(168, 143, 97);
 }
 
+.COActive {
+  color: rgb(161, 161, 161);
+  text-shadow: 2px 2px 4px rgb(14, 13, 13);
+}
+
 .OOActive{
   color: white;
   text-shadow: 2px 2px 4px rgb(168, 143, 97);
@@ -258,3 +263,7 @@ footer img:hover{
   transform: scale(1.1);
 }
 
+// .main {
+//   display: flex;
+//   flex-direction: column;
+// }

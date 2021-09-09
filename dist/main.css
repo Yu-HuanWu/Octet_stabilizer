@@ -141,6 +141,11 @@ h1:hover:after {
   text-shadow: 2px 2px 4px #a88f61;
 }
 
+.COActive {
+  color: #a1a1a1;
+  text-shadow: 2px 2px 4px #0e0d0d;
+}
+
 .OOActive {
   color: white;
   text-shadow: 2px 2px 4px #a88f61;
