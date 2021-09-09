@@ -76,12 +76,34 @@ canvas, .instruction {
 }
 
 h1 {
+  position: relative;
   color: #DCCCBB;
   text-shadow: 2px 2px 4px #000000;
   padding: 0.8em 1.3em;
   font-size: 1.5em;
   box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
   margin: 8px auto;
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(7, 177, 30, 0.424);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+
+h1:hover:after {
+  width: 110%;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .compound {
@@ -230,4 +252,26 @@ sub {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 500ms, opacity 500ms;
+}
+
+footer {
+  margin: 0 auto;
+  width: 500px;
+}
+
+footer > div {
+  padding-top: 2em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+}
+
+footer img {
+  transition: transform 0.2s;
+}
+
+footer img:hover {
+  transform: scale(1.1);
 }
