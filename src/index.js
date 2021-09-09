@@ -2,6 +2,7 @@ const Game = require("./scripts/game.js").default;
 const GameView = require("./scripts/game_view.js").default;
 const restart = document.querySelector('p.restart');
 const beginButton = document.querySelector('p.begin')
+const instruction = document.querySelector('.instruction');
 const gameOverBG = document.querySelector('.gameover-bg');
 const gameOver = document.querySelector('.gameover');
 const start = document.querySelector('.start');
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function(){
     beginButton.addEventListener('click', ()=>{
         start.classList.remove('fade-in');
         start.classList.add('hidden');
+        instruction.classList.remove('fade-in');
+        instruction.classList.add('hidden');
         game.pause=false;
         game.timePassed();
     })

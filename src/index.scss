@@ -42,7 +42,7 @@ body {
   margin: 2*$width auto;
 }
 
-canvas, #bg {
+canvas, #bg , .instruction{
     width: 500px;
     height: 500px;
     position: relative;
@@ -50,7 +50,7 @@ canvas, #bg {
     padding: .4em .4em;
     @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
-canvas {
+canvas, .instruction {
     margin-top: -533px;
     // @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
@@ -151,8 +151,8 @@ sub {
 }
 
 .instruction {
-  margin-top: 73px;
-  position: absolute;
+  // margin-top: -533px;
+  // position: relative;
   z-index: 1;
 }
 

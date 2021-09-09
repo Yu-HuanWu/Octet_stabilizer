@@ -3,6 +3,7 @@ const gameOver= document.querySelector('.gameover');
 const gameStatus= document.querySelector('h3.good-bad');
 const gameOverMsg= document.querySelector('p.gameover-msg');
 const start = document.querySelector('.start');
+const instruction = document.querySelector('.instruction');
 
 
 class GameView {
@@ -26,6 +27,8 @@ class GameView {
     start() {
         start.classList.remove('hidden');
         start.classList.add('fade-in');
+        instruction.classList.remove('hidden');
+        instruction.classList.add('fade-in');
         this.game.pause= true;
         this.bindKeyHandlers();
         this.game.timePassed();

@@ -61,7 +61,7 @@ body {
   font: 1em "Press start 2P";
 }
 
-canvas, #bg {
+canvas, #bg, .instruction {
   width: 500px;
   height: 500px;
   position: relative;
@@ -71,7 +71,7 @@ canvas, #bg {
   margin: 20px auto;
 }
 
-canvas {
+canvas, .instruction {
   margin-top: -533px;
 }
 
@@ -170,8 +170,6 @@ sub {
 }
 
 .instruction {
-  margin-top: 73px;
-  position: absolute;
   z-index: 1;
 }
 
