@@ -2,6 +2,8 @@ const gameOverBG = document.querySelector('.gameover-bg');
 const gameOver= document.querySelector('.gameover');
 const gameStatus= document.querySelector('h3.good-bad');
 const gameOverMsg= document.querySelector('p.gameover-msg');
+const start = document.querySelector('.start');
+
 
 class GameView {
     constructor(game, ctx) {
@@ -22,6 +24,9 @@ class GameView {
     }
 
     start() {
+        start.classList.remove('hidden');
+        start.classList.add('fade-in');
+        this.game.pause= true;
         this.bindKeyHandlers();
         this.game.timePassed();
         this.lastTime = 0;

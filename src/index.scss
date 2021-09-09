@@ -43,15 +43,15 @@ body {
 }
 
 canvas, #bg {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     position: relative;
     display: block;
     padding: .4em .4em;
     @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
 canvas {
-    margin-top: -433px;
+    margin-top: -533px;
     // @include canvasborder( 4px, #EAB464, #8D98A7 );
 }
 
@@ -119,14 +119,14 @@ sub {
 }
 
 .gameover-bg {
-  margin-top: 250px;
   position: absolute;
-  margin-top: 220px;
+  margin-top: 250px;
   z-index: 1;
 }
 
+
 .gameover{
-  margin-top: 260px;
+  margin-top: 300px;
   width: 300px;
   height: 200px;
   position: absolute;
@@ -137,17 +137,36 @@ sub {
   z-index: 2;
 }
 
+.start{
+  color: white;
+  margin-top: 290px;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.instruction {
+  margin-top: 73px;
+  position: absolute;
+  z-index: 1;
+}
+
 .gameover > h3.good-bad {
   font-size: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 
 .gameover > .bad-only {
-    color: rgb(191, 0, 0);
+  color: rgb(191, 0, 0);
 }
 
 .gameover > .good-only {
-    color: rgb(100, 165, 2);
+  color: rgb(100, 165, 2);
 }
 
 .gameover > p.gameover-msg {
@@ -155,6 +174,22 @@ sub {
   text-align: center;
   width: 70%;
 
+}
+
+.start > p.begin {
+  color: black;
+  position: relative;
+  top: 230px;
+  left: 160px;
+  padding: 20px;
+  background-color: rgb(163, 163, 163);
+  @include title( 4px,#A7754D, #FED9B7 );
+  cursor: pointer;
+  z-index: 3;
+}
+
+.start > p.begin:hover {
+  background-color: rgb(254, 255, 200);
 }
 
 .gameover > p.restart {

@@ -10,10 +10,7 @@ boxes.forEach(ele => {
         ele.style.display= "none";
     }
 });
-const atomObj = [
-    [new Lithium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this, src: "src/assets/AtomLi.png" })],
-    [new Beryllium({ pos: [Util.random(20, 300), Util.random(20, 300)], vel: [Util.random(-3, 3), Util.random(-3, 3)], game: this, src: "src/assets/AtomBe.png" })]
-]
+
 
 class Game {
     constructor() {

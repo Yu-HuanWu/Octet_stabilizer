@@ -62,8 +62,8 @@ body {
 }
 
 canvas, #bg {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   position: relative;
   display: block;
   padding: 0.4em 0.4em;
@@ -72,7 +72,7 @@ canvas, #bg {
 }
 
 canvas {
-  margin-top: -433px;
+  margin-top: -533px;
 }
 
 h1 {
@@ -139,14 +139,13 @@ sub {
 }
 
 .gameover-bg {
-  margin-top: 250px;
   position: absolute;
-  margin-top: 220px;
+  margin-top: 250px;
   z-index: 1;
 }
 
 .gameover {
-  margin-top: 260px;
+  margin-top: 300px;
   width: 300px;
   height: 200px;
   position: absolute;
@@ -155,6 +154,25 @@ sub {
   justify-content: center;
   align-items: center;
   z-index: 2;
+}
+
+.start {
+  color: white;
+  margin-top: 290px;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.instruction {
+  margin-top: 73px;
+  position: absolute;
+  z-index: 1;
 }
 
 .gameover > h3.good-bad {
@@ -174,6 +192,23 @@ sub {
   font-size: 15px;
   text-align: center;
   width: 70%;
+}
+
+.start > p.begin {
+  color: black;
+  position: relative;
+  top: 230px;
+  left: 160px;
+  padding: 20px;
+  background-color: #a3a3a3;
+  box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
+  margin: 8px auto;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.start > p.begin:hover {
+  background-color: #feffc8;
 }
 
 .gameover > p.restart {
