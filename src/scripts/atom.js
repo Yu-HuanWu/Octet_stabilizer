@@ -9,7 +9,6 @@ class Atom {
         this.frameX= 0;
         this.frameY= 0;
         this.pos= options.pos;
-        // this.pos= [1,1];
         this.prevPos = this.pos;
         this.vel = options.vel;
         this.game= options.game;

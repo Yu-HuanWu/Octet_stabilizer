@@ -164,38 +164,47 @@ class Player {
                 if (this.game.atoms[j] instanceof Lithium && this.element === "Fluorine") {
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Beryllium && this.element === "Oxygen"){
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Boron && this.element === "Nitrogen") {
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Boron") {
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Beryllium") {
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Lithium") {
                     this.game.updateCompound(this.game.atoms[j]);
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Fluorine && this.element === "Fluorine") {
                     this.game.updateCompound("FF");
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Oxygen") {
                     this.game.updateCompound("OO");
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Nitrogen") {
                     this.game.updateCompound("NN");
                     this.game.remove(this.game.atoms[j]);
+                    this.game.scoreOne();
                     break;
                 }
                 this.vel[0] = -(this.vel[0]);

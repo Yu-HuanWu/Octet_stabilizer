@@ -117,3 +117,64 @@ h1 {
 sub {
   font-size: 0.6em;
 }
+
+.gameover-bg {
+  margin-top: 250px;
+  position: absolute;
+  margin-top: 220px;
+  z-index: 1;
+}
+
+.gameover{
+  margin-top: 260px;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.gameover > h3.good-bad {
+  font-size: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.gameover > .bad-only {
+    color: rgb(191, 0, 0);
+}
+
+.gameover > .good-only {
+    color: rgb(100, 165, 2);
+}
+
+.gameover > p.gameover-msg {
+  font-size: 15px;
+  text-align: center;
+  width: 70%;
+
+}
+
+.gameover > p.restart {
+  background-color: rgb(163, 163, 163);
+  @include title( 4px,#A7754D, #FED9B7 );
+  cursor: pointer;
+}
+
+.gameover > p.restart:hover {
+  background-color: rgb(254, 255, 200);
+}
+
+.fade-in {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 800ms;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 500ms, opacity 500ms
+}
