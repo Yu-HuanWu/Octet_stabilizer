@@ -1,4 +1,5 @@
 # Octet_stabilizer
+Play [here](https://yu-huanwu.github.io/Octet_stabilizer/)!
 
 ## Background
 A simple game that demonstrate how octet rule works in Chemistry. Bond to the atom that has the correct amount of valence electrons, be sure to avoid atoms that don't have the right number of electrons!
