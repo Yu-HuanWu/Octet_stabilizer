@@ -236,6 +236,22 @@ sub {
   background-color: #feffc8;
 }
 
+.timeChange {
+  position: absolute;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 250px;
+  z-index: 2;
+}
+
+.timeChange > p.minusTime {
+  color: red;
+}
+
+.timeChange > p.plusTime {
+  color: green;
+}
+
 .gameover > p.restart {
   background-color: #a3a3a3;
   box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
@@ -276,6 +292,7 @@ footer > div {
 
 footer p {
   text-align: center;
+  font-size: 0.5em;
   margin: 0 auto;
 }
 

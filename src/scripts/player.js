@@ -195,16 +195,22 @@ class Player {
                     this.game.updateCompound("FF");
                     this.game.remove(this.game.atoms[j]);
                     this.game.scoreOne();
+                    this.game.substractTimeMsg();
+                    this.game.timer -= 3;
                     break;
                 } else if ((this.game.atoms[j] instanceof Carbon && this.element === "Oxygen") || (this.game.atoms[j] instanceof Oxygen && this.element === "Carbon")) {
                     this.game.updateCompound("CO");
                     this.game.remove(this.game.atoms[j]);
                     this.game.scoreOne();
+                    this.game.substractTimeMsg();
+                    this.game.timer -= 3;
                     break;
                 } else if (this.game.atoms[j] instanceof Oxygen && this.element === "Oxygen") {
                     this.game.updateCompound("OO");
                     this.game.remove(this.game.atoms[j]);
                     this.game.scoreOne();
+                    this.game.addTimeMsg();
+                    this.game.timer += 5;
                     break;
                 } else if (this.game.atoms[j] instanceof Nitrogen && this.element === "Nitrogen") {
                     this.game.updateCompound("NN");

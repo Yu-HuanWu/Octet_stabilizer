@@ -220,6 +220,23 @@ sub {
   background-color: rgb(254, 255, 200);
 }
 
+.timeChange {
+  position: absolute;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 250px;
+  z-index: 2;
+  // font-size: 2em;
+}
+
+.timeChange > p.minusTime {
+  color: red;
+}
+
+.timeChange > p.plusTime {
+  color: green;
+}
+
 .gameover > p.restart {
   background-color: rgb(163, 163, 163);
   @include title( 4px,#A7754D, #FED9B7 );
@@ -258,6 +275,7 @@ footer > div {
 }
 footer p {
   text-align: center;
+  font-size: 0.5em;
   margin: 0 auto;
 }
 

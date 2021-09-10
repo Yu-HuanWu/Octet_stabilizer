@@ -10,7 +10,8 @@ boxes.forEach(ele => {
         ele.style.display= "none";
     }
 });
-
+const minusTime = document.querySelector(".minusTime");
+const plusTime = document.querySelector(".plusTime");
 
 class Game {
     constructor() {
@@ -137,6 +138,24 @@ class Game {
 
     remove(object) {
         this.atoms.splice(this.atoms.indexOf(object), 1);
+    }
+
+    addTimeMsg(){
+        plusTime.classList.remove('hidden');
+        plusTime.classList.add('fade-in');
+        setTimeout(function(){
+            plusTime.classList.remove('fade-in');
+            plusTime.classList.add('hidden');
+        }, 4000)
+    }
+
+    substractTimeMsg(){
+        minusTime.classList.remove('hidden');
+        minusTime.classList.add('fade-in');
+        setTimeout(function () {
+            minusTime.classList.remove('fade-in');
+            minusTime.classList.add('hidden');
+        }, 4000)
     }
 
     updateCompound(obj){
