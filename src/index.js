@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let canvas = document.getElementById('octet-game');
     canvas.width= Game.DIM_X;
     canvas.height= Game.DIM_Y;
-
+    // game.pause= true;
     beginButton.addEventListener('click', ()=>{
         start.classList.remove('fade-in');
         start.classList.add('hidden');

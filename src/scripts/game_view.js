@@ -46,7 +46,8 @@ class GameView {
             this.player.wallBounce();
             this.game.draw(this.ctx);
         } 
-        if (this.game.timer===0) {
+        if (this.game.timer < 0) {
+            this.game.timer = 60;
             this.game.pause= true;
             let status;
             let gameMessage;
