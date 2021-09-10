@@ -262,6 +262,7 @@ sub {
 footer {
   margin: 0 auto;
   width: 500px;
+  padding-bottom: 2em;
 }
 
 footer > div {
@@ -273,10 +274,44 @@ footer > div {
   width: 300px;
 }
 
+footer p {
+  text-align: center;
+  margin: 0 auto;
+}
+
 footer img {
   transition: transform 0.2s;
 }
 
 footer img:hover {
   transform: scale(1.1);
+}
+
+@media only screen and (max-height: 740px) {
+  canvas, #bg, .instruction {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: block;
+    padding: 0.4em 0.4em;
+    box-shadow: 4px 0 #8D98A7, -4px 0 #8D98A7, 0 -4px #8D98A7, 0 4px #8D98A7, 12px 0 #EAB464, -12px 0 #EAB464, 0 -12px #EAB464, 0 12px #EAB464, 0 0 0 4px #EAB464;
+    margin: 20px auto;
+  }
+
+  canvas, .instruction {
+    margin-top: -433px;
+  }
+
+  .start > p.begin {
+    color: black;
+    position: relative;
+    top: 140px;
+    left: 130px;
+    padding: 20px;
+    background-color: #a3a3a3;
+    box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
+    margin: 8px auto;
+    cursor: pointer;
+    z-index: 3;
+  }
 }

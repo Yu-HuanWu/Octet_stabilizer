@@ -55,5 +55,15 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
+window.addEventListener('keydown', function (e) {
+    if (e.key !== undefined) {
+    } else if (e.keyIdentifier !== undefined) {
+    } else if (e.keyCode !== undefined) {
+    }
+    if (e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+    }
+});
+
 //webpack
 //webpack --watch --mode=development 
