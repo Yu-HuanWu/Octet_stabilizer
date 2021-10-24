@@ -15,7 +15,6 @@ class Atom {
         this.counter= 3;
         this.img= new Image();
         this.img.src= options.src;
-        // this.img.src = "src/assets/ezgif.com-gif-maker.png"
         this.img.onload = () => this.draw()
         this.radius = (this.width * 0.15) /2
     }
@@ -41,18 +40,35 @@ class Atom {
             this.pos[0]= 350;
         };
 
+        if (this.pos[0] > 355) {
+            this.pos[0] = 350;
+        }
+
         if ((this.pos[0] + this.radius*1.2) <= 0){
             this.vel[0]= -(this.vel[0])
             this.pos[0]= 0;
         };
 
+        if (this.pos[0] < 0) {
+            this.pos[0] = 0;
+            this.vel[0] = -(this.vel[0]);
+        }
+
         if ((this.pos[1] + this.radius*2) >= Game.DIM_Y) {
             this.vel[1] = -(this.vel[1])
         };
 
+        if (this.pos[1] > 355) {
+            this.pos[1] = 350;
+        }
+
         if ((this.pos[1] + this.radius*1.2) <= 0) {
             this.vel[1] = -(this.vel[1])
         };
+        if (this.pos[1] < 0) {
+            this.pos[1] = 0;
+            this.vel[1] = -(this.vel[1]);
+        }
 
         this.pos[0] += this.vel[0];
         this.pos[1] += this.vel[1];
@@ -66,7 +82,7 @@ class Atom {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 
-                if (distance < this.radius + this.game.atoms[j].radius) {
+                if (distance < (this.radius) + this.game.atoms[j].radius) {
                     this.vel[0] = -(this.vel[0]);
                     this.game.atoms[j].vel[1] = -(this.vel[1]);
                     this.pos[0] += this.vel[0];

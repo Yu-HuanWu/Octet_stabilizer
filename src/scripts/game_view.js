@@ -31,8 +31,6 @@ class GameView {
         instruction.classList.add('fade-in');
         this.game.pause= true;
         this.bindKeyHandlers();
-        this.game.timePassed();
-        this.lastTime = 0;
         // start the animation
         requestAnimationFrame(this.animate.bind(this));
     }
@@ -40,14 +38,14 @@ class GameView {
     animate(time) {
         const timeDelta = time - this.lastTime;
 
-        if (!this.game.pause) {
+        if (this.game && !this.game.pause) {
             this.player.move(timeDelta);
             this.player.collisionAtoms();
             this.player.wallBounce();
             this.game.draw(this.ctx);
+            this.lastTime = time;
         } 
-        if (this.game.timer < 0) {
-            this.game.timer = 60;
+        if (this.game && this.game.timer < 0) {
             this.game.pause= true;
             let status;
             let gameMessage;
@@ -79,8 +77,6 @@ class GameView {
             gameOver.classList.remove('hidden');
             gameOver.classList.add('fade-in');
         }
-        this.lastTime = time;
-
 
         // every call to animate requests causes another call to animate
         requestAnimationFrame(this.animate.bind(this));

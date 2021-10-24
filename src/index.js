@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let canvas = document.getElementById('octet-game');
     canvas.width= Game.DIM_X;
     canvas.height= Game.DIM_Y;
-    // game.pause= true;
+
     beginButton.addEventListener('click', ()=>{
         start.classList.remove('fade-in');
         start.classList.add('hidden');
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
         instruction.classList.add('hidden');
         game.pause=false;
         game.timePassed();
+        gameView.lastTime= 0;
     })
     let ctx = canvas.getContext("2d");
     let game= new Game();
@@ -46,11 +47,13 @@ document.addEventListener("DOMContentLoaded", function(){
         canvas.width = Game.DIM_X;
         canvas.height = Game.DIM_Y;
         ctx= null;
-        game= null;
+        gameView.game= null;
         ctx = canvas.getContext("2d");
         game= new Game();
         gameView = null;
         gameView= new GameView(game, ctx)
+        game.timer=null;
+        game.timer= 60;
         gameView.start();
     })
 })

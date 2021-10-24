@@ -106,8 +106,21 @@ class Player {
 
     power(impulse){
         //impulse will be based on user's move keys
+        if (this.vel[0] < 0 && impulse[0] >0) {
+            this.vel[0] += impulse[0]*3;
+        }
+        if (this.vel[0] > 0 && impulse[0] < 0) {
+            this.vel[0] += impulse[0] * 3;
+        }
+        if (this.vel[1] < 0 && impulse[1] > 0) {
+            this.vel[1] += impulse[1] * 3;
+        }
+        if (this.vel[1] > 0 && impulse[1] < 0) {
+            this.vel[1] += impulse[1] * 3;
+        }
         this.vel[0] += impulse[0];
         this.vel[1] += impulse[1];
+
     };
 
     switchAtom(){
@@ -218,10 +231,10 @@ class Player {
                     this.game.scoreOne();
                     break;
                 }
-                this.vel[0] = -(this.vel[0]);
+                // this.vel[0] = -(this.vel[0]);
                 this.game.atoms[j].vel[1] = -(this.vel[1]);
-                this.pos[0] += this.vel[0];
-                this.game.atoms[j].pos[0] += this.game.atoms[j].vel[0];
+                // this.pos[0] += this.vel[0];
+                this.game.atoms[j].vel[0] = -(this.vel[0]);;
             }
         }
     }

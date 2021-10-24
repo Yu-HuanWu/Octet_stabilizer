@@ -57,7 +57,7 @@ class Game {
         const player = new Player({
             pos: [180, 180],
             game: this,
-            src: "src/assets/playertest.png"
+            // src: "src/assets/playertest.png"
         });
         this.players.push(player);
         return player
