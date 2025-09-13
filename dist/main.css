@@ -370,15 +370,28 @@ footer img:hover {
     margin-top: -433px;
   }
 
+  .start {
+    position: static;
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .start > p.begin {
     color: black;
-    position: relative;
-    top: 140px;
-    left: 130px;
+    position: static;
+	top: 0;
+	left: 0;
+/*     top: 140px;
+    left: 130px; */
     padding: 20px;
     background-color: #a3a3a3;
     box-shadow: 4px 0 #FED9B7, -4px 0 #FED9B7, 0 -4px #FED9B7, 0 4px #FED9B7, 8px 0 #A7754D, -8px 0 #A7754D, 0 -8px #A7754D, 0 8px #A7754D, 0 0 0 4px #A7754D;
-    margin: 8px auto;
+    margin: 16px auto;
     cursor: pointer;
     z-index: 3;
   }
