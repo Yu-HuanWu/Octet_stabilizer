@@ -348,6 +348,12 @@ footer img:hover {
 
 @media (max-width: 768px) {
   .mobile-controls { display: flex; }
+
+  body {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+  }
 	
   canvas, #bg, .instruction {
     width: 400px;
