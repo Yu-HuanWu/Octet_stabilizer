@@ -370,10 +370,6 @@ footer img:hover {
     margin-top: -433px;
   }
 
-	.start {
-	  margin-top: 190px;
-	}
-
   .start > p.begin {
     color: black;
     position: relative;
@@ -386,6 +382,14 @@ footer img:hover {
     cursor: pointer;
     z-index: 3;
   }
+
+.gameover-bg {
+  margin-top: 150px;
+}
+
+.gameover {
+  margin-top: 200px;
+}
 
   footer {
     margin: 0 auto;
