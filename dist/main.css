@@ -374,6 +374,10 @@ footer img:hover {
     margin-top: -433px;
   }
 
+  .start {
+    margin-top: 0;
+  }
+	
   .start > p.begin {
     color: black;
     position: relative;
@@ -386,6 +390,10 @@ footer img:hover {
     cursor: pointer;
     z-index: 3;
   }
+
+	.timeChange {
+		margin-top: 150px;
+	}
 
 .gameover-bg {
   margin-top: 50px;
