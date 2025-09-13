@@ -275,6 +275,41 @@ sub {
   transition: visibility 0s linear 500ms, opacity 500ms;
 }
 
+.mobile-controls {
+	position: relative;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+/* 	    z-index: 9000; */
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.mobile-controls > div {
+	display: flex;
+	gap: 10px;
+}
+
+.mc-btn {
+	width: 60px;
+	height: 60px;
+	font-size: 2em;
+	border-radius: 50%;
+	border: none;
+	background: #f0f0f0cc;
+	box-shadow: 0 2px 8px #0002;
+	margin: 2px;
+	touch-action: manipulation;
+}
+
+.mc-space {
+	width: 130px;
+	border-radius: 30px;
+	font-size: 1.4em;
+}
+
 footer {
   margin: 0 auto;
   width: 500px;
@@ -304,7 +339,9 @@ footer img:hover {
   transform: scale(1.1);
 }
 
-@media only screen and (max-height: 740px) {
+@media (max-width: 768px) {
+  .mobile-controls { display: flex; }
+	
   canvas, #bg, .instruction {
     width: 400px;
     height: 400px;
