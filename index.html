@@ -126,6 +126,7 @@
 	                event = new KeyboardEvent('keydown', { key: key, code: key.toUpperCase(), keyCode: key.charCodeAt(0), which: key.charCodeAt(0) });
 	            }
 	            document.dispatchEvent(event);
+				window.dispatchEvent(event);
 	        });
 	    });
 	});
