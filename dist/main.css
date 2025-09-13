@@ -355,6 +355,10 @@ footer img:hover {
     width: 100vw; 
     min-height: 100vh; 
   }
+
+	h1 {
+	  text-align: center;
+	}
 	
   canvas, #bg, .instruction {
     width: 400px;
@@ -373,7 +377,7 @@ footer img:hover {
   .start > p.begin {
     color: black;
     position: relative;
-    top: 140px;
+    top: 40px;
     left: 130px;
     padding: 20px;
     background-color: #a3a3a3;
@@ -384,11 +388,11 @@ footer img:hover {
   }
 
 .gameover-bg {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .gameover {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
   footer {
