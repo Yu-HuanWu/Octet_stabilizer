@@ -54,6 +54,82 @@
     <canvas id="octet-game"></canvas>
 
     <script type="application/javascript" src="vendor/keymaster.js"></script>
+	<!-- Mobile Controls Overlay -->
+	<div id="mobile-controls" class="mobile-controls">
+	    <button class="mc-btn" data-key="w">▲</button>
+	    <div>
+	        <button class="mc-btn" data-key="a">◀</button>
+	        <button class="mc-btn" data-key="s">▼</button>
+	        <button class="mc-btn" data-key="d">▶</button>
+	    </div>
+	    <button class="mc-btn mc-space" data-key="space">⎵</button>
+	</div>
+	
+	<style>
+	.mobile-controls {
+	    position: fixed;
+	    bottom: 20px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 9000;
+	    display: none;
+	    flex-direction: column;
+	    align-items: center;
+	    gap: 10px;
+	}
+	.mobile-controls > div {
+	    display: flex;
+	    gap: 10px;
+	}
+	.mc-btn {
+	    width: 60px;
+	    height: 60px;
+	    font-size: 2em;
+	    border-radius: 50%;
+	    border: none;
+	    background: #f0f0f0cc;
+	    box-shadow: 0 2px 8px #0002;
+	    margin: 2px;
+	    touch-action: manipulation;
+	}
+	.mc-space {
+	    width: 130px;
+	    border-radius: 30px;
+	    font-size: 1.4em;
+	}
+	@media (max-width: 768px) {
+	    .mobile-controls { display: flex; }
+	}
+	</style>
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+	    // Hide controls on desktop
+	    function isMobile() {
+	        return window.matchMedia("(max-width: 768px)").matches;
+	    }
+	    const mobileControls = document.getElementById('mobile-controls');
+	    if (isMobile()) mobileControls.style.display = 'flex';
+	    window.addEventListener('resize', () => {
+	        mobileControls.style.display = isMobile() ? 'flex' : 'none';
+	    });
+	
+	    // Simulate keydown events for game controls
+	    mobileControls.querySelectorAll('.mc-btn').forEach(btn => {
+	        btn.addEventListener('touchstart', function (e) {
+	            e.preventDefault();
+	            let key = btn.dataset.key;
+	            let event;
+	            if (key === 'space') {
+	                event = new KeyboardEvent('keydown', { key: ' ', code: 'Space', keyCode: 32, which: 32 });
+	            } else {
+	                event = new KeyboardEvent('keydown', { key: key, code: key.toUpperCase(), keyCode: key.charCodeAt(0), which: key.charCodeAt(0) });
+	            }
+	            document.dispatchEvent(event);
+	        });
+	    });
+	});
+	</script>
     <script src="./dist/main.js"></script>
     
 </body>
