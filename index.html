@@ -123,7 +123,7 @@
 	            if (key === 'space') {
 	                event = new KeyboardEvent('keydown', { key: ' ', code: 'Space', keyCode: 32, which: 32 });
 	            } else {
-	                event = new KeyboardEvent('keydown', { key: key, code: key.toUpperCase(), keyCode: key.charCodeAt(0), which: key.charCodeAt(0) });
+	                event = new KeyboardEvent('keydown', { key: key, code: key.toUpperCase(), keyCode: key.toUpperCase().charCodeAt(0), which: key.toUpperCase().charCodeAt(0) });
 	            }
 	            document.dispatchEvent(event);
 				window.dispatchEvent(event);
